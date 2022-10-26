@@ -1,0 +1,96 @@
+---
+# reference: https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests
+name: "Bug"
+description: "Create a report to help us improve."
+labels: [
+  "bug"
+]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reporting Bugs should follow some simple rules:
+
+        - **Check**, if you can find similar bugs
+        - **Describe** what is happening and what should happen
+        - **Explain** how to reproduce the problem
+        - **Add** more details and attachments
+        - **Follow up**, if somebody is having questions or needs more details
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Please enter an explicit description of your issue
+      placeholder: Short and explicit description of your bug...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reprod
+    attributes:
+      label: "Reproduction steps"
+      description: Please describe the procedure to reproduce the issue
+      value: |
+        1. Do this...
+        2. Click on ...
+        3. Execute command `this command`...
+    validations:
+      required: true
+
+  - type: textarea
+    id: currentbehavior
+    attributes:
+      label: "Current Behavior"
+      description: Please describe the results you received
+      value: |
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expectedbehavior
+    attributes:
+      label: "Expected Behavior"
+      description: Please describe the results you expect
+      value: |
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: os
+    attributes:
+      label: "OS / Environment"
+      value: |
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: inspec
+    attributes:
+      label: "Inspec Version"
+      value: |
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: baseline
+    attributes:
+      label: "Baseline Version"
+      value: |
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional information"
+      description: Please add information like the used software versions, outputs of logs, OS information, screenshots, etc. to enhance the report
+      value: |
+        ...
+    validations:
+      required: false
