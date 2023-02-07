@@ -41,7 +41,7 @@ jobs:
           output: CHANGELOGRELEASE.md
 
       - name: update inspec.yml
-        uses: mikefarah/yq@3.2.1
+        uses: mikefarah/yq@v4.30.8
         with:
           cmd: yq w -I4 -i inspec.yml version ${{ steps.version.outputs.next-version }} && sed -i '1i---' inspec.yml
 
