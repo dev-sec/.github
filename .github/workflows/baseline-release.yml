@@ -41,9 +41,11 @@ jobs:
           output: CHANGELOGRELEASE.md
 
       - name: update inspec.yml
-        uses: mikefarah/yq@3.2.1
+        uses: mikefarah/yq@v4.30.8
+        env:
+          NEXT_VERSION: ${{ steps.version.outputs.next-version }}
         with:
-          cmd: yq w -I4 -i inspec.yml version ${{ steps.version.outputs.next-version }} && sed -i '1i---' inspec.yml
+          cmd: yq '.version = strenv(NEXT_VERSION)' -I4 -i inspec.yml
 
       - name: push inspec.yml and changelog
         uses: github-actions-x/commit@v2.9
