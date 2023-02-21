@@ -41,7 +41,7 @@ jobs:
           output: CHANGELOGRELEASE.md
 
       - name: update inspec.yml
-        uses: mikefarah/yq@v4.30.8
+        uses: mikefarah/yq@v4.31.1
         env:
           NEXT_VERSION: ${{ steps.version.outputs.next-version }}
         with:
