@@ -1,0 +1,24 @@
+---
+name: Reusable workflow for spellcheck with codespell
+
+on:
+  workflow_call:
+    inputs:
+      ignore_words_list:
+        description: 'Comma-separated list of words which will be ignored by codespell.'
+        type: string
+        required: false
+        default: ''
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Codespell
+      uses: codespell-project/actions-codespell@v1
+      with:
+        check_filenames: true
+        ignore_words_list: "${{ inputs.ignore_words_list }}"
