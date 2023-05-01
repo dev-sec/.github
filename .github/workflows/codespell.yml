@@ -9,6 +9,11 @@ on:
         type: string
         required: false
         default: ''
+      skip:
+        description: 'Comma-separated list of files to skip (it accepts globs as well).'
+        type: string
+        required: false
+        default: ''
 
 jobs:
   codespell:
@@ -22,3 +27,4 @@ jobs:
       with:
         check_filenames: true
         ignore_words_list: "${{ inputs.ignore_words_list }}"
+        skip: "${{ inputs.skip }}"
