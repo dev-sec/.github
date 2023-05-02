@@ -13,7 +13,7 @@ on:
         description: 'Comma-separated list of files to skip (it accepts globs as well).'
         type: string
         required: false
-        default: '.git'
+        default: './.git'
 
 jobs:
   codespell:
